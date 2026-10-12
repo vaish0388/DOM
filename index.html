@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vip{
+            background-color: rgb(3, 56, 3);
+            color: #f8f3f3;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(176, 93, 255);">
+    <center><h1><b><i>1.Change text and style on button click</i> </b></h1></center>
+    <h1 id="a">Hello Students</h1>
+    <button onclick="chngtxt()" >Click here to change the mssg</button>
+    <hr>
+        <center><h1><b><i>2.User input to webpage display</i> </b></h1></center>
+<button onclick="name1()">Enter name</button>
+<p id="output"></p>
+<hr>
+        <center><h1><b><i>3.Create and add new list item </i></b></h1></center>
+<ul id="b">
+    <li>HTML</li>
+    <li>CSS</li>
+</ul>
+<button onclick="sub()">Add subject</button>
+<hr>
+        <center><h1><b><i>4.Remove an element and update HTML </i></b></h1></center>
+<p id="notice">Old notice:Exam tomorrow.</p>
+<div id="box"></div>
+<button onclick="note()">Click here</button>
+<hr>
+        <center><h1><b><i>5.Toggle Css class with a single button </i></b></h1></center>
+<h1 id="g">Welcome to this page</h1>
+<button onclick="chnge()">Change Theme</button>
+<script>
+    document.title="DOM"
+    function chngtxt(){
+
+    document.getElementById("a").textContent="Welcome to BIMT college";
+    document.getElementById("a").style.backgroundColor="yellow";
+    document.getElementById("a").style.color="blue";
+
+}
+function name1(){
+    let a=prompt("Enter your name");
+        document.getElementById("output").textContent="Welcome, " +a+"!";
+
+}
+function sub(){
+    let z=document.createElement("li");
+    z.textContent="Javascript";
+document.getElementById("b").appendChild(z);
+}
+function note(){
+    let m=document.getElementById("notice")
+    m.remove();
+    let n=document.createElement("div");
+    n.innerHTML="<h3>New Notice:Holiday Tomorrow.</h3>";
+    document.getElementById("box").appendChild(n);
+
+}
+function chnge(){
+    let k=document.getElementById("g")
+    k.classList.toggle("vip");
+}
+
+</script>
+</body>
+</html>
